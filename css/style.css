@@ -529,8 +529,8 @@ body.section-switching.up .animation-block{
 	margin-bottom:80px;
 }
 .about-text > p{
-	font-size:14px;
-	color:rgba(0,0,0,.4);
+	font-size:13px;
+	color:rgba(0,0,0,.6);
 	line-height:1.8em;
 }
 .about-text{
@@ -557,7 +557,7 @@ body.section-switching.up .animation-block{
 	text-transform:uppercase;
 }
 .info-list > li > span{
-	color:rgba(0,0,0,.4);
+	color:rgba(0,0,0,.6);
 }
 .services-block .section-header{
 	margin-bottom:80px;
