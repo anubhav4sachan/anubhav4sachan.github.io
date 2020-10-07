@@ -1,0 +1,55 @@
+---
+layout: landing
+title: Home
+---
+
+<article role="article" class="post">
+  <!-- <img src="assets/dp.jpg" alt="dp" style="width:30%;"><br> -->
+<h5>Learning with experience replay &#x1F31F;</h5>
+<font size = 50pt><b>Anubhav</b> Sachan</font> <br>
+National Institute of Technology Silchar
+<hr size = "1" width="150" align="left">
+
+<p align="justify">
+I like solving problems in every domain. <br><br>
+With my <a href="/experience">experiences</a> and <a href="/projects">projects</a> undertaken, it is fair to interpret my inclination towards the highly unexplored domain of Machine Learning. With the addition of the <a href="/blog">blog</a> to the website, it encourages me to write more on the topics I find interesting.
+<br> <br>
+Do checkout the <a href="/about">Timeline page</a>.
+</p>
+
+<h2>&#x1f4d6;&nbsp;Contemporary Thoughts: </h2>
+	{% assign sorted = site.posts | sort: 'date' | reverse %}
+	{% for project in sorted limit:5 %}
+	<div class="meta">
+		<a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a>  &middot; <time class="date" datetime="{{ project.date | date_to_xmlschema }}">{{ project.date | date: "%B, %Y" }} </time>
+	</div>
+	{% endfor %}
+
+	<br>
+	More on dedicated <a href="/blog">Blog page</a>.
+
+
+<h2>&#x1f5a5;&nbsp;Recent Projects: </h2>
+	{% assign sorted = site.projects | sort: 'date' | reverse %}
+	{% for project in sorted limit:5 %}
+	<div class="meta">
+		<a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a> <br>
+		<time class="date"> {{ project.organization }} </time>
+<!-- 		<time class="date" datetime="{{ project.date | date_to_xmlschema }}">{{ project.date | date: "%B, %Y" }} &middot; <a href="https://github.com/anubhav4sachan/{{ project.github }}">GitHub</a></time> -->
+	</div>
+	<br>
+	{% endfor %}
+
+	More on dedicated <a href="/projects">Projects page</a>.
+
+<br>
+<h2>&#x1f4ec;&nbsp;Get in touch</h2>
+<ul>
+	• <a href="https://www.linkedin.com/in/anubhav4sachan/" target="_blank">LinkedIn</a>
+	• <a href="https://www.github.com/anubhav4sachan/" target="_blank">Github</a>
+	• <a href="https://www.twitter.com/anubhav4sachan/" target="_blank">Twitter</a>
+	• <a href="https://instagram.com/anubhavenue/" target="_blank">Instagram</a> <br>
+	• E-Mail: <a href="mailto:hi@anubhavsachan.com" target="_blank">hi@anubhavsachan.com</a>
+</ul>
+
+</article>

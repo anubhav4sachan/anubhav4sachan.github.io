@@ -1,0 +1,31 @@
+---
+layout: default
+<!-- title: Notes -->
+---
+<article role="article" class="post">
+<font size = "18px">Blog Posts</font>
+<hr size = "1" width="150" align="left">
+Usually, writing helps and pacifies soul. I have started writing, recently, about the concepts which I find quite fascinating and hope you do it too. Posts range from short to long, and are not limited to any specific topic.
+<p>
+I simultaneously publish on <a href="https://medium.com/@anubhav4sachan/" target="_blank">Medium</a> as well and you get a notification there! </p>
+</article>
+<br>
+<div class="grid">
+
+  {% for post in site.posts %}
+  
+    <article role="article" class="card">
+	    <div class="meta">
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a></h2>
+      <p>{{ post.summary }}</p>
+        <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time> 
+	    </div>
+  
+    </article>
+    
+  {% endfor %}
+  
+   </div>
+
