@@ -24,10 +24,10 @@ social:
 permalink: pretty
 
 # disqus:
-#   name: anubhav4sachan # required
+#   name: "your disqus username" # required
 #   noscript: "Please enable JavaScript to view the comments powered by Disqus." # optional
 
-baseurl: anubhav4sachan.github.io
+baseurl:             ""
 
 include:
   - _redirects
