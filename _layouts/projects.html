@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article role="article" class="post">
+<font size = "18px">Projects</font>
+<hr size = "1" width="150" align="left">
+Considered as implementation of theoretical concepts, they provide an overview of interests and display the knowledge in a field. Below is the list of the completed ones.
+<p>
+I like working on projects with inter-disciplinary domains but related to Deep Learning and am <a href="mailto:hi@anubhavsachan.com">open to collaboration</a>. I'm currently working on various problem statements and will be updating soon. However, till then you can have a look at my <a href = "https://www.github.com/anubhav4sachan/" target="_blank">Github</a>.
+</p>
+</article>
+<br>
+
+<div class="grid">
+
+  {% for project in site.projects reversed %}
+  
+    <article role="article" class="card">
+	    <div class="meta">
+      <h2><a href="{{ site.baseurl }}{{ project.url }}">
+        {{ project.title }}
+      </a></h2>
+      <p>{{ project.summary }}</p>
+        <time class="date" datetime="{{ project.date | date_to_xmlschema }}">{{ project.date | date: "%B, %Y" }} &middot; <a href="https://github.com/anubhav4sachan/{{ project.github }}" target="_blank">GitHub</a><br>{{ project.category }}</time>
+	    </div>
+    </article>
+    
+    
+  {% endfor %}
+  
+</div>

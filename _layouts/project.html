@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<article class="post" role="article">
+	<div class="meta">
+  <h1>{{ page.title }}</h1>
+  <time class="date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B, %Y" }} &middot; <a href="https://github.com/anubhav4sachan/{{ page.github }}" target="_blank">Github &#x2197;</a><br>{{ page.organization}} </time>
+  <div class="meta" style="text-align: justify;">
+  {{ content }}
+   <time class="date"> {{ page.category}}</time>
+</article>

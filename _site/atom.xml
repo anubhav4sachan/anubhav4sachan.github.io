@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Anubhav Sachan</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2020-10-07T10:33:42+05:30</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Anubhav Sachan</name>
+   <email>hi@anubhavsachan.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Intuitive Neural Networks</title>
+   <link href="http://localhost:4000/2020/08/29/intuitive-nn"/>
+   <updated>2020-08-29T00:00:00+05:30</updated>
+   <id>http://localhost:4000/2020/08/29/intuitive-nn</id>
+   <content type="html">&lt;p&gt;Machine learning is a field of study which focuses on the improvement of the performance measure through experiences for some specific tasks. With the introduction of LeNet by Prof. LeCun on the classification of handwritten digits (MNIST) dataset in late 90s, people in research community came to an understanding that neural networks with more than one hidden layers can achieve state of the art (SoTA) results (which was a thought not much appreciated by researchers back then). The modern advances in deep learning methods are facilitated due to the presence of large amount of data and computational power provided through the GPUs and hence giving rise to huge networks like GPTs (GPT-3, being most recent), ResNet, VGG etc. In this article, we will be focusing on the foundational idea of Neural Networks on which these SoTA architectures are built upon.&lt;/p&gt;
+
+&lt;h1 id=&quot;neurons&quot;&gt;Neurons&lt;/h1&gt;
+&lt;p&gt;A brain, in general, harnesses the network of neurons to perform dozens of complex tasks efficiently. Every neuron processes signals entering from a dendrite and gives an output which is sent to the other neuron(s) and processed upon further. Hence, we can evidently state that removal of the network or even the reduction in the complexity of networks can harm its decision making process.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/mnist_snap.png&quot; alt=&quot;mnist_snap&quot; style=&quot;width: 30%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;A snapshot from MNIST Dataset.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;The handwritten digits, for instance, are easily interpreted by the brain to differentiate between the digits, but if we have to write a program to classify them, it would be quite an arduous task. To solve this task, we take some inspiration from these dynamically activating neurons, and formulate a way to mimic it. The whole idea of Machine Learning and Artificial Intelligence is to develop a computer program comprising of artificial neurons (because, neurons are the most powerful entities to perform complex tasks) which shall eventually outperform the capabilities of a human brain.&lt;/p&gt;
+
+&lt;p&gt;The impulses from the sensory parts of the body reach the dendrite and if they are strong enough to create a stimulation, the axon outputs a spike. Since, biological neurons are living cells, they can modify themselves to define a stimulation threshold and hence are dynamic in nature.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/bio_neuron.png&quot; alt=&quot;bio_neuron&quot; style=&quot;width: 60%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;A biological neuron.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/artificial_neuron.png&quot; alt=&quot;artificial_neuron&quot; style=&quot;width: 70%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;An artificial neuron.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Similarly, the artificial neuron has some inputs and each of the input (&lt;script type=&quot;math/tex&quot;&gt;x_i&lt;/script&gt;) is attached to a weight (&lt;script type=&quot;math/tex&quot;&gt;w_i&lt;/script&gt;) and bias (&lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt;) (which are learned during their training period). The weight influences the importance of particular input. They perform a computation and produce a signal, which is forwarded through an activation function (&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;), to produce an output spike (&lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;), given that such signal from &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is above the threshold value.&lt;/p&gt;
+
+&lt;p&gt;To illustrate, let’s consider the MNIST handwritten digits. Each digit is &lt;script type=&quot;math/tex&quot;&gt;28\times28&lt;/script&gt; px in size and each pixel has a grayscale value lying in the range of [0, 1] where 0 &amp;amp; 1 represent black and white respectively. The 2-D array is reshaped to a single dimensional array &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; of length &lt;em&gt;784&lt;/em&gt;, and each index corresponds to an input pixel (&lt;script type=&quot;math/tex&quot;&gt;x_i&lt;/script&gt;). We know that the black/dark pixels do not contribute to the curves/textures, hence they have less importance and light/white pixels exhibit quite significance in the determination of the digit (label). The relevance of a specific pixel (termed as a feature) is determined by the weights attached.&lt;/p&gt;
+
+&lt;h1 id=&quot;single-layer-network&quot;&gt;Single Layer Network&lt;/h1&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+$$\begin{equation}
+   y = f(\sum x_i\cdot w_i + b)
+   \label{Eq:linearregression}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 1&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Equation 1, mathematically, describes the basic functioning of a single layer network. It also establishes its relationship with a biological neuron. Precisely, the output $y$ is a function of an affine transformation of input features, characterized by a linear transformation of features via weighted sum, combined with a translation via the added bias.&lt;/p&gt;
+
+&lt;p&gt;The major goal of the single layer model lies in the identification of a set of weights (&lt;script type=&quot;math/tex&quot;&gt;w_i&lt;/script&gt;) for corresponding input (&lt;script type=&quot;math/tex&quot;&gt;x_i&lt;/script&gt;) so as to fit the data efficiently for our predicted output (&lt;script type=&quot;math/tex&quot;&gt;\hat{y}&lt;/script&gt;). This will ensure a generalized behaviour over the dataset.&lt;/p&gt;
+
+&lt;p&gt;Ignoring the function &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; for a while, we understand that&lt;/p&gt;
+&lt;center&gt;
+&lt;figure&gt;
+$$\begin{equation}
+   \hat{y} = x_1 \cdot w_1 + x_2 \cdot w_2 + ... + x_d \cdot w_d + b
+   \label{eq:expandedlr}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 2&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is total number of features from a input&lt;script type=&quot;math/tex&quot;&gt;{^1}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;w_i&lt;/script&gt; are the required weights. If we collect all the features into a vector &lt;script type=&quot;math/tex&quot;&gt;\textbf{x} \in \mathbb{R}^d&lt;/script&gt; and all our weights into another vector &lt;script type=&quot;math/tex&quot;&gt;\textbf{w} \in \mathbb{R}^d&lt;/script&gt;, the Equation 2 can be simplified using a dot product:&lt;/p&gt;
+&lt;center&gt;
+&lt;figure&gt;
+$$\begin{equation}
+   \hat{y} = \textbf{w}^T \textbf{x} + b
+   \label{eq:compactoned}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 3&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/center&gt;
+&lt;p&gt;The &lt;script type=&quot;math/tex&quot;&gt;\textbf{x}&lt;/script&gt; in Equation 3 corresponds to features of a single data point. To express &lt;script type=&quot;math/tex&quot;&gt;\textbf{x}&lt;/script&gt; for all the inputs (in the dataset) in a &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}^{n \times d}&lt;/script&gt; dimensional space, we introduce a design matrix &lt;script type=&quot;math/tex&quot;&gt;\textbf{X} \in \mathbb{R}^{n \times d}&lt;/script&gt; where each row corresponds to an example and every column for a particular feature.&lt;/p&gt;
+
+&lt;p&gt;Hence, equation 3 can be rewritten for &lt;script type=&quot;math/tex&quot;&gt;n \times d&lt;/script&gt; dimensional space as:&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+$$\begin{equation}
+   \hat{y} = \textbf{X}\cdot \textbf{w} + b
+   \label{eq:compactnd}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 4&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/center&gt;
+&lt;p&gt;and the search for the best parameters weights vector &lt;script type=&quot;math/tex&quot;&gt;\textbf{w}&lt;/script&gt; and bias &lt;script type=&quot;math/tex&quot;&gt;b&lt;/script&gt; lies in the objective function (quality measure) and the procedure to update the parameters for the improvement in quality.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\circ&lt;/script&gt; Fun Fact : The vectorized equations (such as in Eq. \ref{eq:compactnd}) simplify the math and make sure the code runs faster&lt;script type=&quot;math/tex&quot;&gt;^2&lt;/script&gt;. In fact, a GPU has a lot more cores than a standard CPU (around 4000, in comparison to CPU’s 4 cores) and this allows the multi-threading processes to work efficiently, since computation in each cell of the matrix is independent of other cells.&lt;/p&gt;
+
+&lt;h1 id=&quot;multi-layer-perceptron&quot;&gt;Multi-layer Perceptron&lt;/h1&gt;
+
+&lt;p&gt;As the name suggests, we, now, have more than one layer for our deep learning neural architecture. We described about the affine transformation (linear transformation with translation) in the previous section and described how an output from a single layered network is produced. In this section, we will dive deep into multi layer perceptron.&lt;/p&gt;
+
+&lt;h2 id=&quot;hidden-layers&quot;&gt;Hidden Layers&lt;/h2&gt;
+
+&lt;p&gt;The linear models are based on a strong assumption that the a single affine transformation can map our input data to the outputs which is quite unrealistic. In addition, linearity implies monotonicity i.e. increase in the inputs eventually will either cause increase or decrease in the outputs. Let’s think about the classification of digits, the increase in intensity of a pixel doesn’t imply the increase in probability of getting a digit of higher magnitude. Hence, this assumption will surely fail in the case of image data (and of course, various other cases).&lt;/p&gt;
+
+&lt;p&gt;We have understood that the relevance of each input feature (pixel) is more complex&lt;script type=&quot;math/tex&quot;&gt;^3&lt;/script&gt; than expected. So, we introduce a few more fully connected (dense) layers between the inputs and output(s) which are termed as hidden layers. This architecture is referred to as Multi-layer Perceptron (MLP).&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/mlp.jpeg&quot; alt=&quot;mlp&quot; style=&quot;width: 72%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Illustration of Multi-layer Perceptron with a hidden layer of 16 neurons.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Taking up our classic example of MNIST Dataset, we will define a single hidden layer with 16 neurons as shown in Figure of MLP above. The figure lucidly explains the 784 input features, a hidden layer (more such fully-connected (dense) layers can be stacked, with any number of neurons), and output layer. Take a note that, neither input nor output layer is considered to be hidden.&lt;/p&gt;
+
+&lt;p&gt;Previously, we defined the input matrix as &lt;script type=&quot;math/tex&quot;&gt;\textbf{X} \in \mathbb{R}^{n \times d}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; &amp;amp; &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; are number of examples and features respectively. For a one-hidden-layer MLP, with &lt;script type=&quot;math/tex&quot;&gt;h&lt;/script&gt; neurons (hidden units), we can define a hidden layer matrix &lt;script type=&quot;math/tex&quot;&gt;\textbf{H} \in \mathbb{R}^{n \times h}&lt;/script&gt;. Since the hidden and output layers are both fully connected, we have hidden-layer weights and biases as &lt;script type=&quot;math/tex&quot;&gt;\textbf{W}^{(1)} \in \mathbb{R}^{d \times h}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\textbf{b}^{(1)} \in \mathbb{R}^{1 \times h}&lt;/script&gt; and output layer weights and biases as &lt;script type=&quot;math/tex&quot;&gt;\textbf{W}^{(2)} \in \mathbb{R}^{h \times c}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\textbf{b}^{(2)} \in \mathbb{R}^{1 \times c}&lt;/script&gt;. We have chosen simple (1) for first layer (the hidden layer) and (2) for second layer (the output layer) and &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is the number of classes. For our MNIST example: &lt;script type=&quot;math/tex&quot;&gt;n = 1, d = 784, h = 16, c = 10&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mathematically:&lt;/p&gt;
+&lt;figure&gt;
+&lt;center&gt;
+$$\begin{equation}
+   \textbf{H} = \textbf{X}\cdot \textbf{W}^{(1)} + \textbf{b}^{(1)}, 
+   \textbf{O} = \textbf{H}\cdot \textbf{W}^{(2)} + \textbf{b}^{(2)}
+   \label{eq:hoeq}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 5&lt;/figcaption&gt;
+&lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;which can be rewritten as&lt;/p&gt;
+&lt;figure&gt;
+&lt;center&gt;$$\begin{equation}
+   \textbf{O} = (\textbf{X}\cdot \textbf{W}^{(1)} + \textbf{b}^{(1)}) \cdot \textbf{W}^{(2)} + \textbf{b}^{(2)}
+   = \textbf{X}\cdot \textbf{W}^{(1)}\textbf{W}^{(2)} + \textbf{b}^{(1)}\textbf{W}^{(2)} + \textbf{b}^{(2)}
+   = \textbf{X}\cdot \textbf{W} + \textbf{b}.
+   \label{eq:hoopened}
+\end{equation}$$
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Eq. 6&lt;/figcaption&gt;
+&lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\textbf{W} = \textbf{W}^{(1)}\textbf{W}^{(2)}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\textbf{b} = \textbf{b}^{(1)}\textbf{W}^{(2)} + \textbf{b}^{(2)}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The end result (&lt;script type=&quot;math/tex&quot;&gt;\textbf{O} = \textbf{X}\cdot \textbf{W} + \textbf{b}&lt;/script&gt;) brings us back to a linear layer which practically equivalent to Equation 1. This means stacking linear layers over one another will again establish the linear behavior and will act as if only a single layer is present.&lt;/p&gt;
+
+&lt;p&gt;To inculcate a non-linear behaviour, each neuron in a hidden layer is subjected to an activation function &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;, and its outputs are referred to as activations. This activation function brings in a non-linearity and facilitates the MLP architecture to not fall back into a linear model. The equation 5 can be rewritten as:
+&lt;script type=&quot;math/tex&quot;&gt;\begin{equation}
+   \textbf{H} = f(\textbf{X}\cdot \textbf{W}^{(1)} + \textbf{b}^{(1)}), 
+   \textbf{O} = \textbf{H}\cdot \textbf{W}^{(2)} + \textbf{b}^{(2)}
+   \label{eq:hof}
+\end{equation}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The activation function (&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;) brings up the required non-linearity, and hence, causes the stack of linear layers to be non-linear. This can be brought from various activation functions as shown in the given figure.&lt;/p&gt;
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/activationfxn.jpg&quot; alt=&quot;activationfxn&quot; style=&quot;width: 75%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Commonly used non-linearities/activation functions ($$f$$).&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;This addition of non-linear layers increase the number of parameters in the neural network and hence, making it quite easy for the network to map any input with its output.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;With above illustration and simple mathematics, we understood how Single Layer and Multi Layer Perceptrons function. We also looked into how GPUs facilitate the neural networks and how addition of non-linearity boosts the neural network architecture.&lt;/p&gt;
+
+&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h3&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;^1&lt;/script&gt; &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt; is chosen (instead of an obvious choice &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;) due to the fact that all the features can be visualized in a &lt;script type=&quot;math/tex&quot;&gt;d-&lt;/script&gt;dimensional space. &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is, however, used to denote the count of all the examples in a dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;^2&lt;/script&gt; &lt;a href=&quot;https://ai.stackexchange.com/questions/21938/how-do-gpus-faciliate-the-training-of-a-deep-learning-architecture&quot;&gt;AI Stack Exchange Link: How do GPUs facilitate the training of a Deep Learning Architecture?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;^3&lt;/script&gt; For instance, it may depend on the surrounding pixels (referred to as \textit{context}), like in the construction of a straight line.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Goal-Oriented Dialog Generation with Few-Shot Training &amp; Knowledge Transfer</title>
+   <link href="http://localhost:4000/2020/06/03/diktnet"/>
+   <updated>2020-06-03T00:00:00+05:30</updated>
+   <id>http://localhost:4000/2020/06/03/diktnet</id>
+   <content type="html">&lt;p&gt;This article will help you develop an intuition-based understanding of Goal-Oriented Dialogue Generation in dialogue systems, with Few-Shot training and Knowledge Transfer Networks.&lt;/p&gt;
+
+&lt;p&gt;To be specific, we’ll learn about an unsupervised discrete sentence representation learning method that can integrate with any existing encoder-decoder dialogue model, for interpretable response generation using a minimal amount of data that is not annotated.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-few-shot-learning&quot;&gt;Why few-shot learning?&lt;/h1&gt;
+
+&lt;p&gt;Deep Neural Networks have proved to be successful in data-intensive applications. Usually, as shown via conventional practice, a network having numerous parameters has a greater capacity to map the data, and more training data provides the network to have a better generalization.&lt;/p&gt;
+
+&lt;p&gt;Such neural networks, in lack of sufficient data, tend to struggle in fixing the weights and biases for the neurons. In contrast, the human brain having much more complex network architecture does not face any difficulty in adapting to new domains. Instead, it excels in learning new concepts with limited data.&lt;/p&gt;
+
+&lt;p&gt;Few-shot learning has, therefore, been proposed to close the performance gap between a machine learner and a human learner. In the canonical setting of few-shot learning, there is a known training set and unseen testing set with disjoint categories.&lt;/p&gt;
+
+&lt;p&gt;This unique setting of few-shot learning poses an unprecedented challenge in efficiently utilizing the prior information in the training set, which corresponds to the known information or historical information of the human learner.&lt;/p&gt;
+
+&lt;p&gt;Hence, NLP researchers leverage the knowledge learned by the main model to improve the performance measure of the architecture on target data.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-look-inside-few-shot-dialogue-generation&quot;&gt;A Look Inside Few-Shot Dialogue Generation&lt;/h1&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/fsdg.png&quot; alt=&quot;fsdg&quot; style=&quot;width: 110%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;The architecture of Task-Oriented Multi-turn Dialog System with Reinforcement Learning.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Dialogue generation aims at generating human-like responses given a human-to-human dialogue history. In a conventional task-oriented dialogue system, a response (user’s raw utterance) is taken, via either spoken language understanding (SLU) module or a natural language understanding (NLU) module, and converted to a semantic frame of dialogue acts.&lt;/p&gt;
+
+&lt;p&gt;These dialogue acts are sent to a dialogue manager which produces the system’s next action in a semantic frame in accordance with a policy using the dialogue state tracker. Then, through natural language generation (NLG), if chosen by the policy to respond, the semantic frame is transformed into human understandable utterances.&lt;/p&gt;
+
+&lt;p&gt;The training of deep learning-based dialogue systems is hugely dependent on large amounts of data, which questions the ability of the system to perform in a real-world environment with limited data.&lt;/p&gt;
+
+&lt;p&gt;Hence, ‘few-shot learning’ approaches to data-efficient dialogue system training is introduced for a new domain using a latent dialogue act annotation learned in an unsupervised format from a larger multi-domain data source as proposed by &lt;a href=&quot;https://arxiv.org/abs/1804.08069&quot;&gt;Zhao et al. (2018)&lt;/a&gt; (referred to as Latent Action Encoder-Decoder Model).&lt;/p&gt;
+
+&lt;h1 id=&quot;latent-action-encoder-decoder&quot;&gt;Latent Action Encoder-Decoder&lt;/h1&gt;
+
+&lt;p&gt;The development of an unsupervised neural recognition model that can discover interpretable meaning representations of utterances as a set of discrete latent variables can improve the effectiveness of a dialogue system. This is achieved with a better interpretation of the system-intentions and modelization of the high-level decision-making policy that enables useful generalization and data-efficient domain adaptation.&lt;/p&gt;
+
+&lt;p&gt;Built upon variational autoencoders (VAEs), DI-VAE and DI-VST discover interpretable semantics via autoencoding and context predicting, respectively. The prime focus lies in learning discrete latent representations instead of dense continuous ones because of their high interpretability.&lt;/p&gt;
+
+&lt;h3 id=&quot;discrete-information-variational-autoencoder&quot;&gt;Discrete Information Variational Autoencoder&lt;/h3&gt;
+
+&lt;p&gt;Discrete Information Variational Autoencoder (DI-VAE) has been improved upon the traditional Discrete Variational Autoencoder (VAE) through a modification in their learning objective to entertain the anti-information limitation of evidence lower bound objective (ELBO).&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/elbo.png&quot; alt=&quot;elbo&quot; style=&quot;width: 80%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Evidence lower bound objective as an expectation over a dataset.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+&lt;p&gt;The term KL Divergence in ELBO tries to reduce the mutual information (&lt;script type=&quot;math/tex&quot;&gt;I&lt;/script&gt;) between latent variables (&lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt;) and the input data (&lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;) which explains the anti-information limitation.&lt;/p&gt;
+
+&lt;p&gt;The resolution regarding the ignorance of the latent variables during the training phase (anti-information limitation) is to maximize both the data likelihood and mutual information between latent action and input.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/optelbo.png&quot; alt=&quot;optelbo&quot; style=&quot;width: 80%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Joint optimization of ELBO and Mutual Information solves the anti-information limitation in a standard variational autoencoder.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;DI-VAE maximizes the ELBO jointly with the mutual information between input data and latent actions. It minimizes the KL Divergence using Batch Prior Regularization which proves to be advantageous over, the usual, Maximum Mean Discrepancy due to its non-linear nature and fundamental difference with annealing.&lt;/p&gt;
+
+&lt;p&gt;DI-VAE infers sentence representations by the reconstruction of the input sequence, and hence considered generative.&lt;/p&gt;
+
+&lt;h3 id=&quot;discrete-information-variational-skip-thought&quot;&gt;Discrete Information Variational Skip Thought&lt;/h3&gt;
+
+&lt;p&gt;The skip thought is a powerful sentence representation that captures contextual information. It uses a Recurrent Neural Network to encode a sentence and then using the resulting representation it predicts the previous and next sentences.&lt;/p&gt;
+
+&lt;p&gt;The signals through auto encoding are enriched by extending the concept of skip thought to Discrete Information Variational Skip Thought (DI-VST) that learns sentence level distributional semantics. It uses the same recognition network as DI-VAE to output z’s posterior distribution. The learning objective, as shown, is maximized by the minimization of KL Divergence term.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/divst.png&quot; alt=&quot;divst&quot; style=&quot;width: 80%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Learning objective for DI-VST where x_p represents previous sentence and x_n as the next sentence.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;h3 id=&quot;integration-of-di-vae-and-di-vst-with-encoder-and-decoders&quot;&gt;Integration of DI-VAE and DI-VST with Encoder and Decoders&lt;/h3&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/integration.png&quot; alt=&quot;integration&quot; style=&quot;width: 110%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;Integration with Encoder-Decoders at training.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;The role of Recognition Network &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; is to map a sentence to the latent variable &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;, and the generator &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; defines the learning signals that will be used to train &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;’s representation.&lt;/p&gt;
+
+&lt;p&gt;Notably, the recognition network &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; does not depend on the context &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;. This design encourages &lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt; to capture context-independent semantics. At test time, given a context &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;, the policy network &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt; and encoder-decoder network &lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt; will work together to generate the next response. In short, &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;F&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt; are the four components of the framework.&lt;/p&gt;
+
+&lt;p&gt;With the discrete latent variable learned by the recognition and generator network, a dialogue context encoder network encodes the context into a distributed representation. The decoder, then, generates the responses using samples from posterior. Meanwhile, policy network &lt;script type=&quot;math/tex&quot;&gt;\pi&lt;/script&gt; is trained to predict the aggregated posterior from dialogue context &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; via maximum likelihood training. This model is referred to as Latent Action Encoder-Decoder (LAED).&lt;/p&gt;
+
+&lt;p&gt;Preliminary training trains two LAED models, both DI-VAE and DI-VST. Then, at the main training stage, the hierarchical encoders of both models were trained and incorporated with Few Shot Dialogue Generation Model’s decoder to obtain an extraordinary performance.&lt;/p&gt;
+
+&lt;h1 id=&quot;dialogue-knowledge-transfer-network&quot;&gt;Dialogue Knowledge Transfer Network&lt;/h1&gt;
+
+&lt;p&gt;Goal-oriented multi-domain dialogue systems, after the n-COVID19 outbreak, are widely adopted by industries to cater to the needs of existing as well as prospective customers. The data-driven dialogue systems are in development to reduce the amount of data needed for training. This will prove to save a significant amount of computational costs for enterprises.&lt;/p&gt;
+
+&lt;p&gt;Dialogue Knowledge Transfer Network (DiKTNet) is a generative goal-oriented dialogue model designed for few-shot learning, i.e. training only using a few in-domain dialogues. The key underlying concept of this model is transfer learning. DiKTNet makes use of the latent text representation learned from several sources ranging from large-scale general-purpose textual corpora to similar dialogues in domains different to the target one.&lt;/p&gt;
+
+&lt;p&gt;A Hierarchical Encoder-Decoder architecture with attention-based copying model is used for few-shot dialogue generation. The main task of this model is, having been trained on all the available source data, to fine-tune on the target data to be further evaluated on the full set of target-domain dialogues. Knowledge Base Information is represented as token sequences and concatenates it to the dialogue context similarly to CopyNet setup. The copy mechanism’s implementation used for such outstanding performance of DiKTNet is the Pointer-Sentinel Mixture Model.&lt;/p&gt;
+
+&lt;p&gt;DiKTNet achieves state-of-the-art results with two-stage training:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Pre-training Stage:&lt;/em&gt; It involves learning of dialogue action representations to capture the dialogue structure by abstracting away from surface forms. DI-VAE and DI-VST are trained on large sources of dialogue corpora from multiple domains, like, MetaLWOz corpus, in an unsupervised way with the objectives as described above and use their discretized latent codes (for both system and user) respectively in the downstream model at the next stage of training.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Transfer Learning Stage:&lt;/em&gt; At this stage, training for the target task begins using the few-shot dialogue generation architecture as described above. Instead of direct domain transfer, domain-general dialogue understanding is incorporated from the LAED representation trained on MetaLWOz at the previous stage. LAED captures the background top-down dialogue structure: sequences of dialogue acts in a cooperative conversation, latent dialog act-induced clustering of utterances, and the overall phrase structure of spoken utterances.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/images/diktnet.png&quot; alt=&quot;diktnet&quot; style=&quot;width: 110%;&quot; /&gt;
+&lt;figcaption style=&quot;font-size: 10pt;&quot;&gt;DiKTNet Transfer Learning Stage (Stage II).&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Similar to the Few Shot Dialogue Generation, as described above, the DI-VAE is used for reconstruction of the words, and DI-VST for building the context.&lt;/p&gt;
+
+&lt;p&gt;By transferring latent dialogue knowledge from multiple sources of varying generality, a model with superior generalization is obtained for an under-represented domain.&lt;/p&gt;
+
+&lt;p&gt;Finally, DiKTNet is HRED augmented with both ELMo encoder and LAED representation and it is the unsupervised discrete sentence representation learning method. It has the flexibility to accommodate itself via any encoder-decoder model and does not require much data to train itself.&lt;/p&gt;
+
+&lt;h4 id=&quot;refrences&quot;&gt;Refrences:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1910.01302&quot;&gt;[1910.01302] Data-Efficient Goal-Oriented Conversation with Dialogue Knowledge Transfer Networks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1804.08069&quot;&gt;[1804.08069] Unsupervised Discrete Sentence Representation Learning for Interpretable Neural Dialog Generation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arxiv.org/abs/1908.05854&quot;&gt;[1908.05854] Few-Shot Dialogue Generation Without Annotated Data: A Transfer Learning Approach&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+
+</feed>
