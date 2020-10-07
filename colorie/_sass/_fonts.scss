@@ -1,5 +1,0 @@
-@import "_inter.scss";
-html { font-family: 'Inter', 'Helvetica', sans-serif; font-display: swap; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', 'Helvetica', sans-serif; }
-}
