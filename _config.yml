@@ -24,7 +24,7 @@ social:
 permalink: pretty
 
 disqus:
-  name: "your disqus username" # required
+  name: anubhav4sachan # required
   noscript: "Please enable JavaScript to view the comments powered by Disqus." # optional
 
 baseurl: anubhav4sachan.github.io
