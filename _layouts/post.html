@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="post">
+<div class="post" style="font-size: 87%">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
+  <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}{% if post.medium != null %} &middot; <a href="{{ site.medium}}{{ post.medium }}" target="_blank"><i class="fa fa-medium"></i></a>{% endif %}</span>
+  <p style="text-align: justify; color: #515151; margin-top: 0.5rem">{{ content }}</p>
 </div>
 
 <!-- <div class="related">

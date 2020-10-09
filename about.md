@@ -3,18 +3,18 @@ layout: page
 title: About
 ---
 
-### 2020:
+### 2020
 
-Currently, I'm final year under graduate student in the department of [Electronics and Communication Engineering](http://www.nits.ac.in/departments/ece/ece.php) at [National Institute of Technology Silchar](http://www.nits.ac.in/).
+Currently, I'm final year undergraduate student in the department of [Electronics and Communication Engineering](http://www.nits.ac.in/departments/ece/ece.php) at [National Institute of Technology Silchar](http://www.nits.ac.in/).
 
-I'm associated with Green Communication Systems Lab, and working in the Machine Learning domain.
+I'm associated with Green Communications Systems Lab under [Dr. Ganesh Prasad](https://scholar.google.com/citations?user=lHbOWx0AAAAJ&hl=en), and working in the Machine Learning domain.
 
-During April - June, I have working with Speech and Language Technology Lab at <a href = "https://saathi.ai">Saarthi.ai</a>, a conversational AI startup, as Deep Learning Intern to improve the dialogue agent policy using Actor-Critic framework and focusing on dialogue generation through few-shot knowledge transfer networks. Major topics of study were Reinforcement Learning, Dialogue Policy Learning, ML Interpretability & Natural Language Processing.
+During April - June, I have worked with Speech and Language Technology Lab at <a href = "https://saathi.ai">Saarthi.ai</a>, a conversational AI startup, as Deep Learning Research Intern to improve the dialogue agent policy using Actor-Critic framework and focusing on dialogue generation through few-shot knowledge transfer networks. Major topics of study were Reinforcement Learning, Dialogue Policy Learning, ML Interpretability & Natural Language Processing.
 
-I had voluntarily worked, as the Event Head, Data Strata and Publicity Co-Head of NITS' Techno-management fest [Tecnoesis](https://www.tecnoesis.org) till February.
+I had voluntarily worked, as the Event Head, Data Strata and Publicity Co-Head for [Tecnoesis '20](https://www.tecnoesis.org) (NITS' Techno-management fest) till February.
 
 
-### 2019:
+### 2019
 
 Since, September till November, I had been heading various teams in different fests organized as the courtesy of NITS Gymkhana. These were basically Web Development Head at SPIC MACAY, Technical Head at All India Inter NIT Tournament & Technical Team in Srijan. 
 
@@ -25,6 +25,6 @@ During May - July, I had an enriching experience of working in Pattern Recogniti
 February, our team was selected to represent NIT Silchar in the Nationals of Smart India Hackathon 2020 organized by Ministry of Human Resources and Development, Government of India.
 
 
-### 2018:
+### 2018
 
 I also have worked with Computer Vision and Pattern Recognition Lab at <a href = "http://www.mnnit.ac.in/">Motilal Nehru National Institute of Technology Allahabad</a> with <a href = "https://dksinghmnnit.github.io">Dr. Dushyant Kumar Singh</a> to explore various basic machine learning algorithms and to employ challenge of ICDAR to predict the gender of a handwritten document during Winter of 2018.

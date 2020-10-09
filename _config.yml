@@ -20,6 +20,8 @@ version:          2.1.0
 github:
   repo:           https://github.com/anubhav4sachan/
   
+medium:	  https://medium.com/
+  
 plugins:
   - jekyll-paginate
   - jekyll-gist
