@@ -33,3 +33,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:slug
+  publications:
+    output: true
+    permalink: /projects/:slug

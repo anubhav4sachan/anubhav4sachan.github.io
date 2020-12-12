@@ -2,7 +2,7 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <p style="font-size:46px; color: #fff;">
-          Anubhav <b>Sachan</b>
+          <a href="{{ site.url }}">Anubhav <b>Sachan</b></a>
       </p>
       <p style="font-size:20px;">
           Learning with<br>experience replay! <i class="fa fa-star"></i>
@@ -10,7 +10,7 @@
     </div>
     <hr width="90">
     <nav class="sidebar-nav" style="font-size: 90%">
-      <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">Home</a>
+      <!-- <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">Home</a> -->
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
@@ -20,7 +20,7 @@
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
         {% if node.title != null %}
-          {% if node.layout == "page" or node.layout == "blog" or node.layout == "projects" %}
+          {% if node.layout == "page" or node.layout == "blog" or node.layout == "projects" or node.layout == "publications" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}

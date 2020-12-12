@@ -1,0 +1,35 @@
+---
+layout: default
+title: Projects
+---
+
+<h1 class="page-title">{{ page.title }}</h1>
+<br>
+<div class="posts" style="font-size: 87%;">
+<!--   {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %} -->
+ 
+  {% assign sorted = site.publications | sort: 'date' | reverse %}
+  {% for project in sorted %}
+   <div class="post">
+      <h2 class="post-title">{{ project.title }}</h2>{% if project.highlight != null %} <span class="post-date-about">{{ project.highlight }}</span><br>{% endif %}
+      <span class="post-date-about">{{ project.date | date: "%B %Y" }} &middot; <a href = "{{ site.github.repo }}{{ project.github }}" target="_blank">Github &#x2197;</a>{% if project.pdf != null %} &middot; <a href = "{{ project.pdf }}" target="_blank">Author's Copy &#x2197;</a>{% endif %} {% if project.publicationurl != null %} &middot; <a href = "{{ project.publicationurl }}" target="_blank">Publication Copy &#x2197;</a>{% endif %}
+        {% if project.author1 != null %}<br><a href = "{{ project.aurl1 }}" target="_blank">{{project.author1}}</a>{% endif %}{% if project.author2 != null %}, <a href = "{{ project.aurl2 }}" target="_blank">{{ project.author2 }}</a>{% endif %}{% if project.author3 != null %}, <a href = "{{ project.aurl3 }}" target="_blank">{{ project.author3 }}</a>{% endif %}{% if project.author4 != null %}, <a href = "{{ project.aurl4 }}" target="_blank">{{ project.author4 }}</a>{% endif %}{% if project.author5 != null %}, <a href = "{{ project.aurl5 }}" target="_blank">{{ project.author5 }}</a>{% endif %}
+        {% if project.organization != null %}<br><br>Published at:<br><a href = "{{ project.orgurl }}" target="_blank">{{ project.organization }}</a>{% endif %}</span>
+      <u><br><br>Abstract</u>:
+      <p style="text-align: justify; color: #515151; margin-top: 0.3rem">{{ project.summary }}</p>
+    </div>
+  {% endfor %}
+
+</div>
