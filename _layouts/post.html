@@ -4,9 +4,14 @@ layout: default
 
 <div class="post" style="font-size: 87%">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}{% if post.medium != null %} &middot; <a href="{{ site.medium}}{{ post.medium }}" target="_blank"><i class="fa fa-medium"></i></a>{% endif %}</span>
-  <p style="text-align: justify; color: #515151; margin-top: 0.5rem">{{ content }}</p>
+  <span class="post-date-about">{{ page.date | date: "%B %-d, %Y" }}{% if page.medium != null %} &middot; <a href="{{ site.medium}}{{ page.medium }}" target="_blank"><i class="fa fa-medium"></i></a>{% endif %}</span>
 </div>
+<div class="post" style="font-size: 87%; text-align: justify">
+  <p style="text-align: justify; color: #515151; margin-top: 0.5rem">
+  {{ page.content }}
+</p>
+</div>
+
 
 <!-- <div class="related">
   <h2>Related Posts</h2>

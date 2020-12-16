@@ -1,0 +1,112 @@
+{
+  "main": {
+    "id": "e7c7caf1828c1ffb",
+    "type": "split",
+    "children": [
+      {
+        "id": "87bcffff475ef360",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "DLPYT-W01L.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f1b7cc44cd71ad03",
+    "type": "split",
+    "children": [
+      {
+        "id": "7acf8ef19859d872",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e22cfe7a9803d097",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6881004e256ecf94",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "42d15fd5ab7c0c61",
+    "type": "split",
+    "children": [
+      {
+        "id": "773fca0480200e43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57f4b28d08c70d13",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "DLPYT-W01L.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "803722bc51546385",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {}
+            }
+          },
+          {
+            "id": "fe9da6fa44a4e1bd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DLPYT-W01L.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "DLPYT-W01L.md",
+    "DLPYT-W02L.md",
+    "CS234-L02.md",
+    "CS234-L01.md"
+  ]
+}

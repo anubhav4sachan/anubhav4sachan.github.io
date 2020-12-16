@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="post" style="font-size: 87%">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date-about">Lecture {{ page.lnumber }}{% if page.instructor != null %} &middot; <a href="{{ page.ilink }}">{{ page.instructor }}</a>{% endif %}
+            {% if page.uni != null %} &middot; {{ page.uni }}{% endif %}
+            {% if page.version != null %} &middot; {{ page.version }}{% endif %}
+            {% if page.ytlink != null %} &middot; <a href="{{ page.ytlink }}" target="_blank"><i class="fa fa-youtube-play"></i></a>{% endif %}
+            {% if page.website != null %} &middot; <a href="{{ page.website }}" target="_blank"><i class="fa fa-globe"></i></a>{% endif %}</span>
+            <br><br><p style="font-size: 65%; ">If there is any error, please raise an <a href="https://github.com/anubhav4sachan/anubhav4sachan.github.io/issues/new?assignees=&labels=&template=noteserr.md&title=%5Bnotes+error%5D+%3Cname+of+course%3E+%3Clecture%3E">issue</a>.</p>
+  </div><div class="post" style="font-size: 82%; text-align: justify;">
+  <p style="text-align: justify; color: #515151; margin-top: 0.5rem">{{ content }}</p>
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div> -->

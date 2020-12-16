@@ -1,0 +1,47 @@
+---
+layout: default
+title: Notes
+---
+
+<h1 class="page-title">{{ page.title }}</h1>
+<!-- <h5>Journal of thoughts, ideas, and new things I've learned.</h5> -->
+<p style="font-size: 87%">
+This particular page is utilized, almost every day (usually by me!), for referring to some of the concepts during my thinking process.
+</p>
+
+<div class="posts" style="font-size: 80%">
+<!--   {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %} -->
+  
+	<div class="post"  style="font-size: 82%">
+   {% for course in site.notes %}
+      {% if course.number != null %}{{ course.number }} &middot; {{ course.ctitle }} &middot; Lecture {{ course.lnumber }}{% endif %}
+      <h3 class="post-title"><a href="{{ course.url }}">
+        {{ course.title }}
+      </a></h3>
+      <span class="post-date-about">
+            {% if course.instructor != null %}<a href="{{ course.ilink }}">{{ course.instructor }}</a>{% endif %}
+            {% if course.uni != null %} &middot; {{ course.uni }}{% endif %}
+            {% if course.version != null %} &middot; {{ course.version }}{% endif %}
+            {% if course.ytlink != null %} &middot; <a href="{{ course.ytlink }}" target="_blank"><i class="fa fa-youtube-play"></i></a>{% endif %}
+            {% if course.website != null %} &middot; <a href="{{ course.website }}" target="_blank"><i class="fa fa-globe"></i></a>{% endif %}
+      </span>
+      <p style="margin-top: 0.5rem">{{ post.summary }}</p>
+
+  {% endfor %}
+</div>
+</div>
+
+<br>
+<!-- <span class="post-date-about" style="font-size: 50%"><sup>1</sup> Since October 2020. Do checkout!</span> -->
