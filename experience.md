@@ -5,13 +5,14 @@ title: Experience
 
 ### &#x1F52D; &nbsp;Technical
 
+- [NVIDIA](https://www.nvidia.com/en-in/) with [Jigar Halani](https://www.linkedin.com/in/jigarhalani/) and [Sunil Patel](https://www.linkedin.com/in/linus1/)
 - Speech and Language Technology Lab, [Saarthi.ai](https://saarthi.ai/) with [Vishwanath Jha](https://www.linkedin.com/in/vishwanathjha1/) and [Akash Singh](https://www.linkedin.com/in/akashsingh58/)
 - Pattern Recognition and Image Analysis Lab, Discipline of Electrical Engineering, IIT Indore with [Dr. Vivek Kanhangad](http://www.iiti.ac.in/people/~kvivek/)
 
 ### &#x1F574; &nbsp;Management
 
 - Secretary, Machine Learning Club NIT Silchar &middot; &nbsp;<span class="post-date-about">Present</span>
-- Senior Executive Member, Obiettivo, Photography Club NITS &middot; &nbsp;<span class="post-date-about">Present</span>
+- Board Member, Obiettivo, Photography Club NITS &middot; &nbsp;<span class="post-date-about">Present</span>
 - Technical Head: Machine Learning, Robotics Club NITS &middot; &nbsp;<span class="post-date-about">Sept. '19 - July '20</span>
 - Event Head, Data Strata, Tecnoesis '20 &middot; &nbsp;<span class="post-date-about">Feb. '20</span>
 - Publicity Co-Head, Tecnoesis '20 &middot; &nbsp;<span class="post-date-about">Dec. '19 - Feb. '20</span>
