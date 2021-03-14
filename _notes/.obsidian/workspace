@@ -4,16 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "87bcffff475ef360",
-        "type": "leaf",
-        "active": true,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "DLPYT-W01L.md",
-            "mode": "source"
+        "id": "43a7c8a3962c5c29",
+        "type": "split",
+        "children": [
+          {
+            "id": "87bcffff475ef360",
+            "type": "leaf",
+            "dimension": 23.03921568627451,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DLPYT-W02L.md",
+                "mode": "preview"
+              }
+            }
+          },
+          {
+            "id": "52d53c7617534ef9",
+            "type": "leaf",
+            "dimension": 76.9607843137255,
+            "active": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DLPYT-W02L.md",
+                "mode": "source"
+              }
+            }
           }
-        }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -53,7 +73,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 275.01219177246094,
+    "collapsed": true
   },
   "right": {
     "id": "42d15fd5ab7c0c61",
@@ -69,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DLPYT-W01L.md",
+                "file": "DLPYT-W02L.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -83,7 +104,10 @@
             "type": "leaf",
             "state": {
               "type": "tag",
-              "state": {}
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
             }
           },
           {
@@ -92,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DLPYT-W01L.md"
+                "file": "DLPYT-W02L.md"
               }
             }
           }
@@ -104,8 +128,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "DLPYT-W01L.md",
     "DLPYT-W02L.md",
+    "DLPYT-W01L.md",
     "CS234-L02.md",
     "CS234-L01.md"
   ]
