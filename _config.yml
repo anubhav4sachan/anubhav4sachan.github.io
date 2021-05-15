@@ -7,7 +7,7 @@ permalink:        pretty
 # Setup
 title:            Anubhav Sachan
 tagline:          'Learning with experience replay'
-url:		  https://anubhavsachan.com
+url:              https://anubhavsachan.com
 baseurl:          ""
 
 author:
@@ -20,7 +20,7 @@ version:          2.1.0
 github:
   repo:           https://github.com/anubhav4sachan/
   
-medium:	  https://medium.com/
+medium:           https://medium.com/
   
 plugins:
   - jekyll-paginate
