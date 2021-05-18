@@ -9,7 +9,7 @@ Currently, I'm final year undergraduate student in the department of [Electronic
 
 I'm associated with Green Communications Systems Lab under [Dr. Ganesh Prasad](https://scholar.google.com/citations?user=lHbOWx0AAAAJ&hl=en), and working in the Machine Learning domain.
 
-Parallely, I'm also interning with <a href = "https://www.nvidia.com/en-in/" target="_blank"> NVIDIA Graphics</a>, Bangalore, in Deep Learning Inference using CUDA Parallel Programming.
+Parallely, I'm also interning with <a href = "https://www.nvidia.com/en-in/" target="_blank"> NVIDIA Corporation</a>, Bangalore, in Deep Learning Inference using CUDA Parallel Programming.
 
 During April - June, I have worked with Speech and Language Technology Lab at <a href = "https://saarthi.ai" target="_blank">Saarthi.ai</a>, a conversational AI startup, as Deep Learning Research Intern to improve the dialogue agent policy using Actor-Critic framework and focusing on dialogue generation through few-shot knowledge transfer networks. Major topics of study were Reinforcement Learning, Dialogue Policy Learning, ML Interpretability & Natural Language Processing.
 
