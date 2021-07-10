@@ -5,7 +5,7 @@ title: Experience
 
 ### &#x1F52D; &nbsp;Technical
 
-- [NVIDIA](https://www.nvidia.com/en-in/) with [Jigar Halani](https://www.linkedin.com/in/jigarhalani/) and [Sunil Patel](https://www.linkedin.com/in/linus1/)
+- [NVIDIA Corporation](https://www.nvidia.com/en-in/) with [Jigar Halani](https://www.linkedin.com/in/jigarhalani/) and [Sunil Patel](https://www.linkedin.com/in/linus1/)
 - Speech and Language Technology Lab, [Saarthi.ai](https://saarthi.ai/) with [Vishwanath Jha](https://www.linkedin.com/in/vishwanathjha1/) and [Akash Singh](https://www.linkedin.com/in/akashsingh58/)
 - Pattern Recognition and Image Analysis Lab, Discipline of Electrical Engineering, IIT Indore with [Dr. Vivek Kanhangad](http://www.iiti.ac.in/people/~kvivek/)
 

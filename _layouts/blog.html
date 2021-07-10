@@ -4,11 +4,11 @@ title: Blog
 ---
 
 <h1 class="page-title">{{ page.title }}</h1>
-<h5>Journal of thoughts, ideas, and new things I've learned.</h5>
+<h5>Journal of thoughts and experiences!</h5>
 <p style="font-size: 87%; text-align: justify;">
-A copy of these articles is also available on <a href="https://www.medium.com/@anubhav4sachan/" target="_blank">Medium</a>. It (and <a href="https://www.twitter.com/anubhav4sachan/" target="_blank"><i class="fa fa-twitter"></i></a>) will notify about all the future posts. Additionally, there is a <a href="{{ site.url }}/notes">Notes</a> subsite<span class="post-date-about" style="font-size: 70%"><sup>1</sup></span> as well for quick references.
+<!-- A copy of these articles is also available on <a href="https://www.medium.com/@anubhav4sachan/" target="_blank">Medium</a>. It (and <a href="https://www.twitter.com/anubhav4sachan/" target="_blank"><i class="fa fa-twitter"></i></a>) will notify about all the future posts. Additionally, there is a <a href="{{ site.url }}/notes">Notes</a> subsite<span class="post-date-about" style="font-size: 70%"><sup>1</sup></span> as well for quick references. -->
 </p>
-
+<br><br>
 <div class="posts" style="font-size: 87%">
 <!--   {% for post in paginator.posts %}
   <div class="post">
@@ -26,14 +26,17 @@ A copy of these articles is also available on <a href="https://www.medium.com/@a
   
 	<div class="post">
    {% for post in site.posts %}
-      <h2 class="post-title"><a href="{{ post.url }}">
+      <!-- <h2 class="post-title"><a href="{{ post.url }}"> -->
+      <h2 class="post-title"><a href="{{ site.medium}}{{ post.medium }}" target="_blank">
         {{ post.title }}
-      </a></h2><span class="post-date-about">{{ post.date | date: "%B %-d, %Y" }}{% if post.medium != null %} &middot; <a href="{{ site.medium}}{{ post.medium }}" target="_blank"><i class="fa fa-medium"></i></a>{% endif %}</span>
-      <p style="margin-top: 0.5rem; text-align: justify;">{{ post.summary }}</p>
-
+      </a></h2><span class="post-date-about">{{ post.date | date: "%B %-d, %Y" }}{% if post.medium != null %}
+<!--        &middot; <a href="{{ site.medium}}{{ post.medium }}" target="_blank"><i class="fa fa-medium"></i></a>{% endif %} -->
+     </span>
+      <!-- <p style="margin-top: 0.5rem; text-align: justify;">{{ post.summary }}</p> -->
+      <br><br>
   {% endfor %}
 </div>
 </div>
 
-<br>
-<span class="post-date-about" style="font-size: 70%"><sup>1</sup> Since October 2020. Do checkout!</span>
+<!-- <br>
+<span class="post-date-about" style="font-size: 70%"><sup>1</sup> Since October 2020. Do checkout!</span> -->
