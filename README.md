@@ -25,4 +25,4 @@ Serve the website now by:
 #### Note for WSL (Especially for repo in mounted drives (eg.: `/mnt/c/`)
 
 - For EPERM Error: Shutdown WSL with `wsl --shutdown` in Powershell, then log in to Ubuntu and modify the permissions with `chmod 777 anubhav4sachan.github.io`. [Link 1](https://stackoverflow.com/questions/57243299/jekyll-operation-not-permitted-apply2files/57281081), [Link2](https://stackoverflow.com/questions/46610256/chmod-wsl-bash-doesnt-work)
-- Auto-regeneration should work, if it doesn't, use `jekyll serve --force_polling --livereload`.
+- Auto-regeneration should work, if it doesn't, use `jekyll serve --force_polling --livereload`. [Link](https://github.com/microsoft/WSL/issues/216#issuecomment-716047269)
