@@ -5,6 +5,8 @@ title: About
 
 ### 2021
 
+In August, I have joined <a href = "https://research.samsung.com/">Samsung Research</a> at <a href = "https://research.samsung.com/sri-d/" target="_blank">Samsung R&D Institute India - Delhi (SRI-D)</a> as (Software Research) Engineer I.
+
 June has been an eventful month.<br>
 &ensp; I've graduated with my bachelor's degree (B. Tech.) from the Department of <a href = "http://www.nits.ac.in/departments/ece/ece.php" target="_blank">Electronics and Communication Engineering</a> at the <a href = "hhttp://www.nits.ac.in/" target="_blank">National Institute of Technology Silchar</a>.<br>&ensp; I worked with <a href = "https://scholar.google.com/citations?user=1AleAUIAAAAJ&hl=en" target="_blank">Dr. Deepak Mishra</a> (<a href = "https://research.unsw.edu.au/people/dr-deepak-mishra" target="_blank">University of New South Wales, Sydney</a>) and <a href = "https://scholar.google.com/citations?user=lHbOWx0AAAAJ&hl=en" target="_blank">Dr. Ganesh Prasad</a> (<a href = "https://www.nits.ac.in" target="_blank">National Institute of Technology Silchar</a>) for my <i>bachelor's thesis</i>.<br>
 &ensp; I have also completed my *Spring Research Internship* at <a href = "https://www.nvidia.com/en-in/" target="_blank">NVIDIA Corporation</a> on deep learning inference using NVIDIA SDKs (<a href = "https://developer.nvidia.com/tensorrt/" target="_blank">TensorRT</a>, <a href = "https://developer.nvidia.com/nvidia-triton-inference-server" target="_blank">Triton Inference Server</a> and <a href = "https://developer.nvidia.com/deepstream-sdk" target="_blank">DeepStream</a>).

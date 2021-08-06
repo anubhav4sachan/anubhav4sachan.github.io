@@ -5,6 +5,7 @@ title: Experience
 
 ### &#x1F52D; &nbsp;Technical
 
+- (Software Research) Engineer I, <a href = "https://research.samsung.com/sri-d/" target="_blank">Samsung R&D Institute India - Delhi (SRI-D)</a> &middot; &nbsp;<span class="post-date-about">Aug. '21 - Present</span>
 - Spring Research Intern, <a href = "https://www.nvidia.com/en-in/" target="_blank">NVIDIA Corporation</a> with <a href = "https://www.linkedin.com/in/jigarhalani/" target="_blank">Jigar Halani</a> and <a href = "https://www.linkedin.com/in/linus1/" target="_blank">Sunil Patel</a> &middot; &nbsp;<span class="post-date-about">Dec. '20 - June '21</span>
 - Summer Research Intern, Speech and Language Technology Lab, <a href="https://saarthi.ai/" target="_blank">Saarthi.ai</a> with <a href="https://www.linkedin.com/in/vishwanathjha1/" target="_blank"> Vishwanath Jha</a> and <a href="https://www.linkedin.com/in/akashsingh58/" target="_blank">Akash Singh</a> &middot; &nbsp;<span class="post-date-about">Apr. '20 - June '20</span>
 - Pattern Recognition and Image Analysis Lab, Discipline of Electrical Engineering, IIT Indore with <a href="http://www.iiti.ac.in/people/~kvivek/" target="_blank">Dr. Vivek Kanhangad</a> &middot; &nbsp;<span class="post-date-about">May '19 - July '19</span>
