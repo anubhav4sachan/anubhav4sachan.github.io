@@ -24,12 +24,12 @@ title: Projects
   {% for project in sorted %}
    <div class="post">
       <h2 class="post-title">{{ project.title }}</h2>{% if project.highlight != null %} <span class="post-date-about">{{ project.highlight }}</span><br>{% endif %}
-      <span class="post-date-about">{{ project.date | date: "%B %Y" }} {% if project.github != null %}&middot; <a href = "{{ site.github.repo }}{{ project.github }}" target="_blank">Github &#x2197;</a>{% endif %}{% if project.pdf != null %} &middot; <a href = "{{ project.pdf }}" target="_blank">Author's Copy &#x2197;</a>{% endif %} {% if project.publicationurl != null %} &middot; <a href = "{{ project.publicationurl }}" target="_blank">Publication Copy &#x2197;</a>{% endif %}
+      <span class="post-date-about">{{ project.date | date: "%B %Y" }} {% if project.github != null %}&middot; <a href = "{{ site.github.repo }}{{ project.github }}" target="_blank">Github &#x2197;</a>{% endif %}{% if project.pdf != null %} &middot; <a href = "{{ project.pdf }}" target="_blank">Author's Copy &#x2197;</a>{% endif %} {% if project.publicationurl != null %} &middot; <a href = "{{ project.publicationurl }}" target="_blank">Publication Copy &#x2197;</a>{% endif %} {% if project.ppt != null %} &middot; <a href = "{{ project.ppt }}" target="_blank">Presentation &#x2197;</a>{% endif %}
         {% if project.author1 != null %}<br><a href = "{{ project.aurl1 }}" target="_blank">{{project.author1}}</a>{% endif %}{% if project.author2 != null %}, <a href = "{{ project.aurl2 }}" target="_blank">{{ project.author2 }}</a>{% endif %}{% if project.author3 != null %}, <a href = "{{ project.aurl3 }}" target="_blank">{{ project.author3 }}</a>{% endif %}{% if project.author4 != null %}, <a href = "{{ project.aurl4 }}" target="_blank">{{ project.author4 }}</a>{% endif %}{% if project.author5 != null %}, <a href = "{{ project.aurl5 }}" target="_blank">{{ project.author5 }}</a>{% endif %}
-        {% if project.organization != null %}<br><br>Published at:<br><a href = "{{ project.orgurl }}" target="_blank">{{ project.organization }}</a>{% endif %}</span>
+        {% if project.organization != null %}<br><br>Published in the proceedings of <br><a href = "{{ project.orgurl }}" target="_blank">{{ project.organization }}</a>{% endif %}{% if project.location != null %}<br>at {{ project.location }}{% endif %}.</span>
       <!-- <br><br><span id="dots"></span><span id="more">
       <u>Abstract:</u>
-      <p style="text-align: justify; color: #515151; margin-top: 0.3rem"><i>{{ project.summary }}<br>{% if project.ppt != null %}<span class="post-date-about"><a href = "{{ project.ppt }}" target="_blank">[Copy of the presentation]</a></span>{% endif %}</i></p></span>
+      <p style="text-align: justify; color: #515151; margin-top: 0.3rem"><i>{{ project.summary }}<br>{% if project.ppt != null %}<span class="post-date-about"><a href = "{{ project.ppt }}" target="_blank">[Presentation]</a></span>{% endif %}</i></p></span>
       <span class="post-date-about"><a onclick="showMore()" id="myBtn">Abstract <i class="fa fa-angle-down"></i></a></span> -->
     </div>
   {% endfor %}
