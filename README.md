@@ -3,7 +3,7 @@
 `anubhav4sachan.github.io` is the codebase for my portfolio page and is associated with the domain [anubhavsachan.com](https://anubhavsachan.com).
 
 ### Previous Version(s)
-`hyde-initial` branch is actively updated or whenever something significant happens.
+`hyde-initial` branch is actively updated (whenever something significant happens).
 
 `master` branch has (very) old website.
 
@@ -11,7 +11,7 @@
 ## Installing Jekyll and serving the website
 
 ```
-sudo apt-get install ruby-full build-essential zlib1g-dev
+sudo apt-get install ruby-full build-essential zlib1g-dev jekyll
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc && echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc && echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 cd anubhav4sachan.github.io/
