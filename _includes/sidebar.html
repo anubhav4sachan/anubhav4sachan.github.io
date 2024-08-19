@@ -8,6 +8,20 @@
   gtag('config', 'G-DCY3LGXV45');
 </script>
 
+<script>
+  function toggleHamburger() {
+  var x = document.getElementById("links");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
@@ -17,34 +31,47 @@
       <p style="font-size:20px;">
           Learning with<br>experience replay! <i class="fa fa-star"></i>
       </p>
+      <div id="hamburger" style="font-size: 110%">
+        <a href="javascript:void(0);" class="icon" onclick="toggleHamburger()">
+          <i class="fa fa-bars"></i>
+        </a> <br>
+      </div>
     </div>
-    <hr width="90">
-    <nav class="sidebar-nav" style="font-size: 90%">
-      <!-- <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">Home</a> -->
+    <div id="copyright">
+      <hr width="90">
+    </div>
+    <div id="links">
+      <nav class="sidebar-nav" style="font-size: 90%">
+        <!-- <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">Home</a> -->
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+        {% comment %}
+          The code below dynamically generates a sidebar nav of pages with
+          `layout: page` in the front-matter. See readme for usage.
+        {% endcomment %}
 
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" or node.layout == "blog" or node.layout == "projects" or node.layout == "publications" or node.layout == "patents" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+        {% assign pages_list = site.pages %}
+        {% for node in pages_list %}
+          {% if node.title != null %}
+            {% if node.layout == "page" or node.layout == "blog" or node.layout == "projects" or node.layout == "publications" or node.layout == "patents" %}
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+            {% endif %}
           {% endif %}
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
 
-<!--       <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
+        <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
+        <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+        <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
 
-      <!-- <a class="sidebar-nav-item" href="{{ site.url }}/docs/Anubhav_Sachan_Resume.pdf" target="_blank">Resume</a> -->
-    </nav>
+        <a class="sidebar-nav-item" href="{{ site.url }}/docs/Anubhav_Sachan_Resume.pdf" target="_blank">Resume</a> -->
+        <br>
+        <a href="https://scholar.google.com/citations?user=FLV55uwAAAAJ&hl=en&oi=ao" target="_blank"><i class="ai ai-google-scholar"></i></a> &middot; <a href="https://www.linkedin.com/in/anubhav4sachan/" target="_blank"><i class="fa fa-linkedin"></i></a> &middot; <a href="https://www.github.com/anubhav4sachan/" target="_blank"><i class="fa fa-github"></i></a> &middot; <a href="https://www.twitter.com/anubhav4sachan/" target="_blank"><i class="fa fa-twitter"></i></a> &middot; <a href="https://www.medium.com/@anubhav4sachan/" target="_blank"><i class="fa fa-medium"></i></a> &middot; <a href="https://instagram.com/_anubhavsachan/" target="_blank"><i class="fa fa-instagram"></i></a> &middot; <a href="mailto:hi@anubhavsachan.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
 
-<a href="https://scholar.google.com/citations?user=FLV55uwAAAAJ&hl=en&oi=ao" target="_blank"><i class="ai ai-google-scholar"></i></a> &middot; <a href="https://www.linkedin.com/in/anubhav4sachan/" target="_blank"><i class="fa fa-linkedin"></i></a> &middot; <a href="https://www.github.com/anubhav4sachan/" target="_blank"><i class="fa fa-github"></i></a> &middot; <a href="https://www.twitter.com/anubhav4sachan/" target="_blank"><i class="fa fa-twitter"></i></a> &middot; <a href="https://www.medium.com/@anubhav4sachan/" target="_blank"><i class="fa fa-medium"></i></a> &middot; <a href="https://instagram.com/_anubhavsachan/" target="_blank"><i class="fa fa-instagram"></i></a> &middot; <a href="mailto:hi@anubhavsachan.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
-<br><br>
-    <p style="font-size: 50%; margin-bottom: 1%">&copy; {{ site.time | date: '%Y' }} | Built with <i class="fa fa-heart"></i> by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a href="https://github.com/poole/hyde/" target="_blank">Hyde</a>.</p>
+      </nav>
+    </div>
+    
+    <div id="copyright">
+      <p style="font-size: 50%; margin-bottom: 1%">&copy; {{ site.time | date: '%Y' }} | Built with <i class="fa fa-heart"></i> by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> &amp; <a href="https://github.com/poole/hyde/" target="_blank">Hyde</a>.</p>
+    </div>
+    
   </div>
 </div>

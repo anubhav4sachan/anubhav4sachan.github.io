@@ -58,7 +58,23 @@ html {
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
+  font-size: 140%;
 }
+
+.sidebar #links{
+  display: none;
+}
+
+.sidebar #hamburger{
+  display: block;
+  text-align: right;
+}
+
+.sidebar #copyright{
+  display: none;
+}
+
+
 @media (min-width: 50em) {
   .sidebar {
     position: fixed;
@@ -67,6 +83,18 @@ html {
     bottom: 0;
     width: 18rem;
     text-align: left;
+    font-size: 100%;
+  }
+  .sidebar #links{
+    display: block;
+  }
+
+  .sidebar #hamburger{
+    display: none;
+  }
+
+  .sidebar #copyright{
+    display: block;
   }
 }
 
