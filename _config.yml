@@ -37,6 +37,9 @@ collections:
   publications:
     output: true
     permalink: /projects/:slug
+  patents:
+    output: true
+    permalink: /projects/:slug
   notes:
     output: true
     permalink: /notes/:slug
